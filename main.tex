@@ -1,0 +1,152 @@
+\documentclass[11pt]{article}
+\usepackage{macros}
+\singlespacing
+\begin{document}
+
+\section{Externality and Bargaining}
+Kevin is a graduate student in economics and 
+is endowed with a dollar amount $y_A$ per day.
+    Francisco is not an economist and is endowed with dollar amount $y_B$ per
+    day. It costs Kevin \$4 an hour to produce economics research. Let $x$
+    denote the number of hours per day that Kevin devotes to research. Kevin's research gives Francisco trading signals, and thus Francisco also has a perference over Kevin's research. Kevin's and Francisco's utilities are $u_A, u_B$, respectively:\begin{align*}
+    u_A(x, y_A) &= \begin{cases}
+        y_A + 8x - x^2/2 & x \le 8 \\
+        y_A + 32 & o.w.
+    \end{cases} \\
+    u_B(x, y_A) &= \begin{cases}
+        y_B + 12x - x^2/2 & x \le 12 \\
+        y_B + 72 & o.w.
+    \end{cases}
+    \end{align*}
+    
+\begin{enumerate}
+    \item 
+\end{enumerate}
+\section{Cobb--Douglas}
+
+\section{Vertical Monopolies}
+There is a unit mass of identical price-taking consumers. Each consumer has income $y$ and consumes widgets $x$ and some num\'eraire good $x_0$, with utility function \[
+u(x, x_0) = x_0 + \frac{1}{\sigma+1} x^{\sigma+1}, \quad -1 < \sigma < 0
+\]
+The price of $x$ is $p$ and the price of $x_0$ is $1$.
+\begin{enumerate}
+    \item Assume that $y$ is large so that $x_0, x$ have positive demand. Derive the Marshallian demand for $x$ as a function of $p$. Given $p$, derive the consumer surplus in good $x$.
+    \begin{sol}
+        The first order conditions are \[
+        x^{\sigma} = \lambda p \quad \lambda = 1.
+        \]
+        Thus $x = p^{1/\sigma}$ and $x_0 = y - p^{\frac{\sigma + 1}{\sigma}}$, assuming $y > p^{\frac{\sigma + 1}{\sigma}}$. 
+        
+        The consumer surplus is \[
+        \text{CS} = \int_{p}^{\infty} t^{1/\sigma}\,dt = \frac{1}{1+1/\sigma}t^{1/\sigma + 1}\Bigg \rvert_{p}^\infty = \frac{-\sigma}{\sigma + 1} p^{1 + 1/\sigma}.
+        \]
+    \end{sol}
+    
+     \begin{sol}\textbf{[Alternative Solution]}
+          Recognize that the Marshallian demand for a quasilinear utility function $u(a,b) = a + v(b)$ with $p_a=1, p_b=p$ is \[b = (v')^{-1}(p).\]
+              \end{sol} 
+    \item What's the elasticity of demand?
+    \begin{sol}
+        \[
+        \diff{\log x}{ \log p} = \frac{1}{\sigma}. 
+        \]
+    \end{sol}
+    \item 
+    Assume the consumers purchase positive amounts of $x$.
+    The consumers purchase $x$ from a monopolist retailer, who sets the price $p$. Suppose the retailer faces constant marginal cost $c_R$, solve for the profit-maximizing $p$ as a function of $c_R$. Derive the retailer's profit $\pi_R$. 
+    \begin{sol}
+         The monopolist maximizes \[
+         \max_p \, p^{1+1/\sigma} - c_R p^{1/\sigma} 
+         \]
+         Thus \[
+         \frac{1+\sigma}{\sigma} p^{1/\sigma} - \frac{1}{\sigma}c_R p^{\frac{1-\sigma}{\sigma}} = 0 \implies p = \frac{1}{1+\sigma} c_R. 
+         \]
+         
+         The retailer's profit is \[
+         \pi_R = \pr{\frac{1}{1+\sigma} c_R }^{1 + 1/\sigma} - c_R\pr{\frac{1}{1+\sigma} c_R }^{1/\sigma}
+         \]
+         
+     \end{sol}
+     \begin{sol}\textbf{[Alternative Solution]}
+          Recognize that the monopolist sets price with the markup rule \[
+          \text{Price} = \pr{\frac{1}{1+1/\epsilon}} \cdot \pr{\text{Marginal Cost}} = \frac{1}{1+\sigma} c_R,
+          \]
+          where $\epsilon < 0$ is the elasticity of demand.
+      \end{sol} 
+     \item Assume the monopolist purchases $x$ from a monopolistic wholesaler, who sets $c_R$ and faces constant, exogenous marginal cost $c_W$. Solve for the profit-maximizing $c_W$. Derive the wholesaler's profit $\pi_W$ and the sum of the wholesaler and retailer's profits $\pi_W + \pi_R$.
+     \begin{sol}
+     Note that \[
+     x = \pr{\frac{1}{1+\sigma} c_R }^{1/\sigma}
+     \]
+         The wholesaler solves \[
+         \max_p \, c_R \pr{\frac{1}{1+\sigma}c_R }^{1/\sigma} - c_W \pr{\frac{1}{1+\sigma} c_R}^{1/\sigma}
+         \]
+    By the problem above, we have that \[c_R = \frac{1}{1+\sigma} c_W.\] 
+    
+    Let $A = \frac{1}{1+\sigma}$. We have \begin{align*}
+        \pi_W &= A^{1/\sigma} \pr{c_R^{1+1/\sigma} - c_W c_R^{1/\sigma}}
+        \\
+        &=  A^{1/\sigma} \pr{A^{1+1/\sigma} c_W^{1+1/\sigma} - A^{1/\sigma}c_W c_W^{1/\sigma}} \\
+        &= A^{2/\sigma} \pr{A-1}c_W^{1+1/\sigma}\\
+        \pi_W + \pi_R &= \pr{A^2 c_W}^{1 + 1/\sigma} - A c_W \pr{A^2 c_W}^{1/\sigma} + A^{2/\sigma} \pr{A-1}c_W^{1+1/\sigma} \\
+        &= A^{2+2/\sigma} c_W^{1+1/\sigma} - A^{1+2/\sigma} c_W^{1+1/\sigma} + A^{1 + 2/\sigma} c_W^{1+1/\sigma} - A^{2/\sigma}c_W^{1+1/\sigma} \\
+        &= A^{2/\sigma} (A+1)(A-1) c_W^{1+1/\sigma}.
+    \end{align*}
+    
+     \end{sol}
+     
+     \item What is the total surplus $\text{CS} + \pi_W + \pi_R$?
+     \begin{sol}
+     \begin{align*}
+     \text{Total Surplus} &= A^{2/\sigma} (A+1)(A-1) c_W^{1+1/\sigma} - \frac{\sigma}{\sigma + 1} \pr{A^2 c_W}^{1 + 1/\sigma} \\
+     &= c_W^{1+1/\sigma} \pr{A^{2/\sigma} (A+1)(A-1) - \sigma A^{3+2/\sigma}}
+     \end{align*}
+     \end{sol}
+     
+     \item Suppose the retailer and wholesaler merge into a monopoly that charges $p_{\text{merged}}$ to the consumers and takes $c_W$ marginal cost. Find the optimal $p_{\text{merged}}$ and total surplus.  
+     \begin{sol}
+         $p_{\text{merged}} = Ac_W.$ The monopoly's profit is \[
+         \pr{Ac_W}^{1+1/\sigma} - c_W (Ac_W)^{1/\sigma} = A^{1/\sigma}(A-1) c_W^{1+1/\sigma}. 
+         \]
+         \begin{align*}
+         \text{Total Surplus} &=    A^{1/\sigma}(A-1) c_W^{1+1/\sigma} - \frac{\sigma}{\sigma+1} \pr{Ac_W}^{1+1/\sigma} \\
+         &= c_W^{1+1/\sigma} \pr{A^{1/\sigma}(A-1) -\sigma A^{2+1/\sigma}}
+         \end{align*}
+         
+     \end{sol}
+     \item Suppose $\sigma = -1/2$. Should the total-surplus-maximizing Federal Trade Commission let the retailer and wholesaler merge?
+     
+    \begin{sol}
+             Consider \begin{align*}
+             \frac{\text{TS}_\text{separate}}{\text{TS}_{\text{merged}}} &= \frac{ c_W^{1+1/\sigma} \pr{A^{2/\sigma} (A+1)(A-1) - \sigma A^{3+2/\sigma}}}{c_W^{1+1/\sigma} \pr{A^{1/\sigma}(A-1) -\sigma A^{2+1/\sigma}}}\\
+             &= A^{1/\sigma} \pr{A + \frac{A-1}{-\sigma A^2 + A -1}} \\
+             \end{align*}
+            Plugging in $\sigma = -1/2$, $A = 2$, we have that the ratio equals $\frac{1}{4}\pr{2 + \frac{1}{2 + 2 - 1}} = \frac{7}{12} < 1$. Therefore the FTC should let the firms merge. 
+         \end{sol}     
+    
+    \item (Bonus) Prove that the total surplus under the merged firm is larger for all $\sigma \in (-1,0)$. 
+    [Hint: Use a version of Bernoulli's inequality: $(1+t)^r \ge rt$ for $t > -1$, $r \le 0$] 
+    \begin{sol}
+    Observe that \[
+    -\sigma A^2 + A - 1 = \frac{-\sigma + (1+\sigma) - (1+\sigma)^2}{(1+\sigma)^2} = \frac{- 2 \sigma - \sigma^2 }{(1+\sigma)^2} = \frac{-\sigma(\sigma+2)}{(1+\sigma)^2}
+    \]
+        Consider \begin{align*}
+             \frac{\text{TS}_\text{separate}}{\text{TS}_{\text{merged}}} &= \frac{ c_W^{1+1/\sigma} \pr{A^{2/\sigma} (A+1)(A-1) - \sigma A^{3+2/\sigma}}}{c_W^{1+1/\sigma} \pr{A^{1/\sigma}(A-1) -\sigma A^{2+1/\sigma}}}\\
+             &= A^{1/\sigma} \pr{A + \frac{A-1}{-\sigma A^2 + A -1}} \\
+              \\
+             &= A^{1/\sigma} \pr{A + \frac{(1+\sigma)^2}{-\sigma (\sigma + 2)} \frac{-\sigma}{1+\sigma}} \\
+             &= A^{1+1/\sigma} \pr{1 + \frac{(1+\sigma)^2}{\sigma+2}} \\
+             &=  A^{1+1/\sigma} \pr{\frac{\sigma^2 + 3 \sigma + 3}{\sigma + 2}}.
+             \end{align*}
+             By the inequality $(1+x)^r \ge 1 + rx$, we have 
+             \[
+             A^{1+1/\sigma} = \frac{1}{(1+\sigma)^{1+1/\sigma}} \le \frac{1}{2+\sigma}.
+             \]
+             Thus \[
+             \frac{\text{TS}_\text{separate}}{\text{TS}_{\text{merged}}} \le \frac{\sigma^2 + 3 \sigma + 3}{(\sigma+2)^2} = \frac{\sigma^2 + 3 \sigma + 3}{\sigma^2 + 3 \sigma + (4 + \sigma)} < 1
+             \]
+             for any $\sigma \in (-1,0)$. 
+    \end{sol}
+    \item True/False/Uncertain: Mergers always hurt the consumer.
+\end{enumerate}
+\end{document}
