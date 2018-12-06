@@ -3,7 +3,7 @@
 \singlespacing
 \begin{document}
 
-\section{Externality and Bargaining}
+\section{Externality}
 Kevin is a graduate student in economics and 
 is endowed with a dollar amount $y_A$ per day.
     Francisco is not an economist and is endowed with dollar amount $y_B$ per
@@ -22,7 +22,74 @@ is endowed with a dollar amount $y_A$ per day.
 \begin{enumerate}
     \item 
 \end{enumerate}
-\section{Cobb--Douglas}
+\section{Spicy Cobb--Douglas}
+
+Suppose there are two goods $x,y$ and utility \[
+u(x,y) = \begin{cases}
+     (x-\bar a)^\alpha (y-\bar b)^{1- \alpha} & x > \bar a, y > \bar b \\
+     -\infty & o.w.
+\end{cases}
+\]
+with $\bar a, \bar b > 0.$ Let $w$ denote wealth and assume $p_x \bar a + p_y \bar b < w$.  
+\begin{enumerate}
+    \item Derive the Marshallian demand for $x,y$. 
+    \begin{sol}
+        Observe that one must purchase $\bar a$ units of $x$ and $\bar b$ units of $y$. Assume that one has already done so. Let $\tilde w = w - (p_x \bar a + p_y \bar b)$. Let $\tilde x = (x-\bar a)$ and $\tilde y = (y-\bar b)$. Then the problem is \[
+        \max_{\tilde x, \tilde y} \, \tilde x ^{\alpha} \tilde y^{1-\alpha}\text{ subjected to } p_x \tilde x + p_y\tilde y = \tilde w,
+        \]
+        which is a vanilla Cobb--Douglas problem.
+        
+        Therefore \[
+        \tilde x = x-\bar a = \frac{\alpha \tilde w}{p_x}\quad \tilde y = y-\bar b = \frac{(1-\alpha)\tilde w}{p_y},
+        \]
+        yielding the Marshallian demand \[
+        x = \bar a + \frac{\alpha \tilde w}{p_x} \quad y = \bar b + \frac{(1-\alpha) \tilde w}{p_y}.
+        \]        
+    \end{sol}
+    
+    \item Derive the Hicksian demand functions for $x$ and $y$ from the cost minimization problem. 
+    \begin{sol}
+        The Cobb--Douglas first order conditions are \[
+        \frac{\tilde y}{\tilde x} = \frac{1- \alpha}{\alpha}\frac{p_x}{p_y} \implies \tilde y = A \tilde x,
+        \]
+        for some $A$.
+        
+        Then \[
+        A^{1-\alpha} \tilde x = \bar U \implies \tilde x = \pr{\frac{\alpha p_y}{(1- \alpha) p_x}}^{1-\alpha} \bar U.
+        \]
+        and \[
+        \tilde y = A x = A^{\alpha} \bar U = \pr{\frac{(1- \alpha)p_x}{\alpha p_y}}^\alpha \bar U.
+        \]    
+    \end{sol}
+    \item Show that the own-price Slutsky equation for good $x$ holds for this utility function.
+    \begin{sol}
+        We wish to show that \[
+        \frac{dx}{dp_x} = \diff{h_x}{p_x} - x \diff{x}{w}.
+        \]
+        Note that \[\frac{dx}{dp_x} = \alpha \frac{\bar a p_x - w + \bar a p_x + \bar b p_y}{p_x^2} = -\alpha \frac{w - \bar b p_y}{p_x^2} \]
+        \[
+        \diff{h_x}{p_x} = - (1-\alpha) \pr{\frac{\alpha p_y}{(1- \alpha) p_x}}^{1-\alpha} \frac{\bar U}{p_x},
+        \]
+        where \[\bar U = \pr{\frac{\alpha \tilde w}{p_x}}^\alpha \pr{\frac{(1-\alpha) \tilde w}{p_y}}^{1-\alpha}.\]
+        Then \[
+        \diff{h_x}{p_x}
+= -(1-\alpha) \alpha \tilde w \frac{1}{p_x^2}.
+        \]
+        Lastly \[
+        x\diff{x}{w} = \pr{\bar a + \frac{\alpha \tilde w}{p_x}}\frac{\alpha}{p_x}.
+        \]
+        Then \begin{align*}
+        \text{RHS} &= -(1-\alpha) \alpha \tilde w \frac{1}{p_x^2} - \pr{\bar a + \frac{\alpha \tilde w}{p_x}}\frac{\alpha}{p_x} \\
+        &= -\alpha \tilde w p_x^{-2} + \alpha^2 \tilde w p_x^{-2} - \bar a \alpha p_x p_x^{-2} - \alpha^2 \tilde w p_x^{-2} \\
+        &= -\alpha p_x^{-2} \pr{\tilde w + \bar a p_x} = -\alpha p_x^2 (w - \bar b p_y) = \text{LHS}.
+        \end{align*}
+        \end{sol}
+        \item Using your Slutsky decomposition from the previous part, can you say which demand function, Marshallian or Hicksian, is more sensitive to price changes? Is this true for all goods and all utility functions (briefly)?
+        \begin{sol}
+            Note that the income effect $-x\diff{x}{w}$ is negative. Thus Marshallian demand is more sensitive. This is not true of all goods and utility functions (consider inferior goods). 
+        \end{sol}
+
+\end{enumerate}
 
 \section{Vertical Monopolies}
 There is a unit mass of identical price-taking consumers. Each consumer has income $y$ and consumes widgets $x$ and some num\'eraire good $x_0$, with utility function \[
